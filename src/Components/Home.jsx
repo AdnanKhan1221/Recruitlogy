@@ -3,6 +3,7 @@ import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -14,62 +15,64 @@ const Home = () => {
 
 
       {/* Hero-Section */}
-      <div
-        className="connecting rounded-2xl border-0 h-[50rem] w-full relative bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(40,58,69,0.6), rgba(62,74,111,0.6), rgba(7,29,42,0.6)), url('/Images/backgroundImage.jpg')`,
-        }}
-      >
+<div
+  className="connecting rounded-2xl border-0 h-[50rem] w-full relative bg-cover bg-center"
+  style={{
+    backgroundImage: `linear-gradient(to bottom, rgba(40,58,69,0.6), rgba(62,74,111,0.6), rgba(7,29,42,0.6)), url('/Images/backgroundImage.jpg')`,
+  }}
+>
+  <div className='TextContainer pt-60 ml-30'>
+    <div className="insideText text-sm font-bold text-white">Recruiting of the future</div>
+    <div className="insideText font-bold text-6xl text-white mt-5">Connecting Businesses</div>
+    <div className="insideText font-bold text-6xl text-lime-300 ml-46 mt-4">with Talent</div>
+    <div className="insideText text-3xl mt-5 ml-18 text-white">Empowering Careers with Opportunities</div>
 
-        <div className='TextContainer pt-60 ml-30'>
-          <div className="insideText text-sm font-bold text-white">Recruiting of the future</div>
-          <div className="insideText font-bold text-6xl text-white mt-5">Connecting Businesses</div>
-          <div className="insideText font-bold text-6xl text-lime-300 ml-46 mt-4">with Talent</div>
-          <div className="insideText text-3xl mt-5 ml-18 text-white">Empowering Careers with Opportunities</div>
-
-          <div className="buttons mt-6 flex gap-4 ml-40">
-            <div className="bg-red-600 text-white px-6 py-3 rounded-2xl font-bold cursor-pointer opacity-[0.77] hover:bg-red-400 transition duration-300">
-              I’m an Employer
-            </div>
-            <div className="bg-red-600 text-white px-6 py-3 rounded-2xl font-bold cursor-pointer opacity-[0.77] hover:bg-red-400 transition duration-300">
-              I’m a Job Seeker
-            </div>
-          </div>
+    <div className="buttons mt-6 flex gap-4 ml-40">
+      {/* Employer Button */}
+      <Link to="/employer">
+        <div className="bg-red-600 text-white px-6 py-3 rounded-2xl font-bold cursor-pointer opacity-[0.77] hover:bg-red-400 transition duration-300">
+          I’m an Employer
         </div>
+      </Link>
 
-
-
-        {/* SearchBox */}
-        <div className="SearchJobs h-50 w-[40%] bg-red-300 opacity-[0.77] ml-210 rounded-4xl mt-10 p-10">
-          <div className="text-white font-bold text-2xl ml-36 mb-6">Start your job search</div>
-
-          <div className="flex gap-4">
-            <div className="flex items-center bg-white rounded-xl px-4 py-2 w-2/3">
-              <FaSearch className="text-gray-400 mr-2" />
-              <input
-                type="text"
-                placeholder="Job title, skills or company"
-                className="w-full outline-none text-gray-700 bg-transparent"
-              />
-            </div>
-
-            <div className="flex items-center bg-white rounded-xl px-4 py-2 w-1/3">
-              <FaMapMarkerAlt className="text-gray-400 mr-2" />
-              <input
-                type="text"
-                placeholder="Location"
-                className="w-full outline-none text-gray-700 bg-transparent"
-              />
-            </div>
-
-            <div className="bg-red-600 text-white font-bold px-6 py-2 rounded-2xl cursor-pointer hover:bg-red-400 transition duration-300 flex items-center justify-center">
-              Search
-            </div>
-          </div>
+      {/* Job Seeker Button (also goes to /employer) */}
+      <Link to="/employer">
+        <div className="bg-red-600 text-white px-6 py-3 rounded-2xl font-bold cursor-pointer opacity-[0.77] hover:bg-red-400 transition duration-300">
+          I’m a Job Seeker
         </div>
+      </Link>
+    </div>
+  </div>
 
+  {/* SearchBox */}
+  <div className="SearchJobs h-50 w-[40%] bg-red-300 opacity-[0.77] ml-210 rounded-4xl mt-10 p-10">
+    <div className="text-white font-bold text-2xl ml-36 mb-6">Start your job search</div>
+
+    <div className="flex gap-4">
+      <div className="flex items-center bg-white rounded-xl px-4 py-2 w-2/3">
+        <FaSearch className="text-gray-400 mr-2" />
+        <input
+          type="text"
+          placeholder="Job title, skills or company"
+          className="w-full outline-none text-gray-700 bg-transparent"
+        />
       </div>
 
+      <div className="flex items-center bg-white rounded-xl px-4 py-2 w-1/3">
+        <FaMapMarkerAlt className="text-gray-400 mr-2" />
+        <input
+          type="text"
+          placeholder="Location"
+          className="w-full outline-none text-gray-700 bg-transparent"
+        />
+      </div>
+
+      <div className="bg-red-600 text-white font-bold px-6 py-2 rounded-2xl cursor-pointer hover:bg-red-400 transition duration-300 flex items-center justify-center">
+        Search
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
